@@ -1,0 +1,26 @@
+package salarySum;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EmployeeDao {
+	
+	public List<Employee> getModel() {
+		
+		List<Employee> emp = new ArrayList();
+		emp.add(new Employee(1001,"Ram","Blr",5000));
+		emp.add(new Employee(1002,"Jeeban","Hyd",5100));
+		emp.add(new Employee(1003,"Pratik","Blr",5000));
+		emp.add(new Employee(1004,"Abhishek","Hyd",2500));
+		emp.add(new Employee(1005,"Rahul","Blr",5000));
+		emp.add(new Employee(1006,"Rajat","Hyd",2500));
+		emp.add(new Employee(1007,"Sarat","Hyd",3500));
+		emp.add(new Employee(1008,"karan","Blr",5000));
+		emp.add(new Employee(1009,"Abhi","Hyd",3500));
+		emp.add(new Employee(1010,"satish","Blr",7000));
+		emp.add(new Employee(1011,"dev","Hyd",10000));
+		
+		return emp;
+	}
+
+}

@@ -1,0 +1,14 @@
+package functionalInterface;
+
+import java.util.function.Consumer;
+
+public class ConsumerNew {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Consumer<Integer> consumer = t -> System.out.println("print the value "+t);
+		consumer.accept(20);
+
+	}
+
+}

@@ -1,0 +1,35 @@
+package pfStucture;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class EmployeeService {
+	
+	public List<Employee> getEmployeeSort(){
+		List<Employee> emps = new EmployeeDao().getModel();
+		
+		Collections.sort(emps, (o1,o2)-> o1.getName().compareTo(o2.getName()));
+		return emps;
+	}
+	
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(new EmployeeService().getEmployeeSort());
+		
+		List<Employee> empsNew = new EmployeeService().getEmployeeSort();
+		
+		System.out.println(empsNew.stream()
+						.filter(p ->p.getLocation().contentEquals("Hyd"))
+						.collect(Collectors.toList()));
+						
+		
+	}
+	
+	
+
+}

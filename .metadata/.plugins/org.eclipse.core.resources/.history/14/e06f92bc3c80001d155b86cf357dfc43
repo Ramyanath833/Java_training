@@ -1,0 +1,21 @@
+package employee;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+public class EmployeeService {
+	
+	public List<Employee> getEmployeeSort(){
+		List<Employee> emps = new EmployeeDao().getModel();
+		
+		Collections.sort(emps, (o1,o2)-> o1.getName().compareTo(o2.getName()));
+		return emps;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(new EmployeeService().getEmployeeSort());
+	}
+
+}

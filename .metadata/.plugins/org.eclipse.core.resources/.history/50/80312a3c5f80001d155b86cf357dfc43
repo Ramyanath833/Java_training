@@ -1,0 +1,13 @@
+package optional;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class EmployeeDaoPan {
+
+	List<Employee> emp1 = new ArrayList();
+	emp1.add(new Employee(1001,"Ram","Blr",58000.0));
+	emp1.add(new Employee(1001,"Jeeban","Hyd",51000.0));
+	
+}

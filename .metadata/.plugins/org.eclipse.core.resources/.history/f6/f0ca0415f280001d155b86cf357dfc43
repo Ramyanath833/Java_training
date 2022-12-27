@@ -1,0 +1,25 @@
+package ticketing;
+
+import java.util.HashMap;
+import java.util.List;
+
+public class Ticket {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		List<Passenger> passenger = new PassengerDao().getPassenger();
+		HashMap<Passenger, Integer> passd = new HashMap<>();
+		for(int i=0; i<passenger.size()-1;i++) {
+			if(passenger.get(i).getKm()!=0) {
+				int price = 5*passenger.get(i).getKm();
+				passd.put(passenger.get(i), price);
+			}
+		}
+		
+		System.out.println(passd);
+		
+
+	}
+
+}

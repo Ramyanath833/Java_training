@@ -1,0 +1,5 @@
+package com.ust.springExample.setterInjection;
+
+public class Employee {
+
+}

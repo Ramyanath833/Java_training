@@ -1,0 +1,19 @@
+package optional;
+
+import java.util.Optional;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String str="kiran";
+        Optional<String> optionalString=Optional.ofNullable(str);
+        System.out.println(optionalString.isPresent());
+        optionalString.ifPresent(value->{
+            System.out.println(value);
+        });
+
+	}
+
+}

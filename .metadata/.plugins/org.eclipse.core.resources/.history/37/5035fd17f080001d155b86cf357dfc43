@@ -1,0 +1,11 @@
+package ticketing;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PassengerDao {
+	
+	List<Passenger> pass = new ArrayList();
+	pass.add(new Passenger(101,"Ram","Blr","Hyd",300));
+
+}
