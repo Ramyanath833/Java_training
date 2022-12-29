@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.user.userMicroservice.dto.Labour;
 import com.user.userMicroservice.dto.UserLabourDto;
 import com.user.userMicroservice.model.User;
@@ -63,9 +65,17 @@ public class UserService {
 		List<Labour> labour = responseEntity.getBody();
 		List<Labour> workLabour = new ArrayList<>();
 		
-		for(int i=0; i<labour.size(); i++) {
-			if(labour.get(i).getSpecialization().equalsIgnoreCase(work)) {
-				workLabour.add(labour.get(i));
+		ObjectMapper mapper = new ObjectMapper();
+		
+		List<Labour> accountList = mapper.convertValue(
+				responseEntity.getBody(), 
+			    new TypeReference<List<Labour>>(){}
+			);
+		
+		for(int i=0; i<accountList.size(); i++) {
+			System.out.println(accountList.get(i).getSpecialization());
+			if(accountList.get(i).getSpecialization().equalsIgnoreCase(work)) {
+				workLabour.add(accountList.get(i));
 			}
 		}
 		System.out.println("I m done");
